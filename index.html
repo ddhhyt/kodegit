@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escritorio (Inicio) KodeGit</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="media/logo.ico" sizes="16x16">
+    <link rel="icon" type="image/png" href="media/logo.ico" sizes="32x32">
+    <link rel="icon" type="image/png" href="media/logo.ico" sizes="48x48">
+    <link rel="apple-touch-icon" href="media/logo.ico">
+    <style>
+        .sidebar {
+            height: 100vh;
+            overflow-y: auto;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            width: 220px;
+            padding-top: 56px;
+            transition: all 0.3s;
+            background-color: #f8f9fa;
+        }
+
+        .sidebar.collapsed {
+            width: 0;
+            overflow: hidden;
+        }
+
+        .sidebar .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            color: #000;
+        }
+
+        .sidebar .nav-link i {
+            margin-right: 8px;
+        }
+
+        .sidebar .nav-item:nth-child(odd) .nav-link {
+            background-color: #0f5faf58;
+        }
+
+        .nav-link.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .nav-link.active i {
+            color: #fff;
+        }
+
+        .content {
+            margin-left: 220px;
+            padding-top: 56px;
+            transition: all 0.3s;
+        }
+
+        .content.collapsed {
+            margin-left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="#">KodeGit</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://aiittoor10.github.io/DejateDeHistorias/"
+                        target="_blank">DéjateDeHistorias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">NewsLetter</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/aiittoor10/DejateDeHistorias"
+                        target="_blank">GitHub</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ayuda.html">Ayuda</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="d-flex">
+        <div class="sidebar" id="sidebar">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-home"><img src="media/icons/inicio.png" alt="Inicio"></i> Inicio</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-user"><img src="media/icons/perfil.png" alt="Peril"></i> Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="configuracion.html"><i class="fas fa-cog"><img src="media/icons/ajustes.png" alt="ajustes"></i> Configuración</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Salir</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link"><i class="fas fa-sign-out-alt"><img src="media/icons/mas.png" alt="nueva-entrada"></i> Nueva entrada</a>
+                </li>
+            </ul>
+        </div>
+
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 content" id="mainContent">
+            <div class="container mt-5">
+                <div class="jumbotron">
+                    <h1 class="display-4">KodeGit</h1>
+                    <p class="lead">Plataforma creada para la edición Web DéjateDeHistorias</p>
+                    <hr class="my-4">
+                    <p>Empieza a crear apartados a través de las siguientes plantillas</p>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Empezar</a>
+                </div>
+            </div>
+
+            <div class="container my-5">
+                <h3>Accesos Directos</h3>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center shadow-sm h-100">
+                            <div class="card-body d-flex flex-column">
+                                <i class="fas fa-hashtag fa-3x mb-3 text-info"></i>
+                                <h2 class="card-title">Nueva Entrada</h2>
+                                <p class="card-text flex-grow-1">Publica el nuevo video subido esta semana.</p>
+                                <a href="nuevaentrada.html" target="_blank" class="btn btn-info mt-auto">Añadir
+                                    Entrada</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center shadow-sm h-100">
+                            <div class="card-body d-flex flex-column">
+                                <i class="fas fa-calendar-plus fa-3x mb-3 text-primary"></i>
+                                <h2 class="card-title">Nuevo Evento</h2>
+                                <p class="card-text flex-grow-1">Crea y publica acontecimientos importantes por fecha.
+                                </p>
+                                <a href="#" class="btn btn-primary mt-auto">Añadir Evento</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center shadow-sm h-100">
+                            <div class="card-body d-flex flex-column">
+                                <i class="fas fa-newspaper fa-3x mb-3 text-success"></i>
+                                <h2 class="card-title">Nueva Noticia</h2>
+                                <p class="card-text flex-grow-1">Publica las últimas noticias y mantén a todos
+                                    informados.</p>
+                                <a href="#" class="btn btn-success mt-auto">Añadir Noticia</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center shadow-sm h-100">
+                            <div class="card-body d-flex flex-column">
+                                <i class="fas fa-hashtag fa-3x mb-3 text-info"></i>
+                                <h2 class="card-title">Nuevo Hashtag</h2>
+                                <p class="card-text flex-grow-1">Gestiona hashtags para mejorar la búsqueda y
+                                    organización.</p>
+                                <a href="#" class="btn btn-info mt-auto">Añadir Hashtag</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center shadow-sm h-100">
+                            <div class="card-body d-flex flex-column">
+                                <i class="fas fa-calendar-plus fa-3x mb-3 text-primary"></i>
+                                <h2 class="card-title">Nueva Página</h2>
+                                <p class="card-text flex-grow-1">Crear una nueva página con contenido actualizado.</p>
+                                <a href="#" class="btn btn-primary mt-auto">Añadir Evento</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card text-center shadow-sm h-100">
+                            <div class="card-body d-flex flex-column">
+                                <i class="fas fa-newspaper fa-3x mb-3 text-success"></i>
+                                <h2 class="card-title">Actualizar Vídeos Recientes</h2>
+                                <p class="card-text flex-grow-1">Actualiza los últimos cuatro videos más recientes.</p>
+                                <a href="#" class="btn btn-success mt-auto">Añadir Noticia</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-5">
+                <h3>Vista Previa</h3>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <a href="https://aiittoor10.github.io/DejateDeHistorias/" target="_blank"
+                            class="card-link d-block">
+                            <div class="card">
+                                <img src="media/DDHH.png" class="card-img-top" alt="Imagen de Déjate De Historias">
+                                <div class="card-body">
+                                    <h5 class="card-title">Déjate De Historias</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <a href="https://github.com/aiittoor10/DejateDeHistorias" target="_blank"
+                            class="card-link d-block">
+                            <div class="card">
+                                <img src="media/DDHH.png" class="card-img-top" alt="Imagen de NewsLetter">
+                                <div class="card-body">
+                                    <h5 class="card-title">NewsLetter</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="bg-light py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">© 2024 KodeGit - DéjateDeHistorias</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('sidebarToggle').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+            document.getElementById('mainContent').classList.toggle('collapsed');
+        });
+    </script>
+</body>
+
+</html>

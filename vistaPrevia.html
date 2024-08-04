@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizador de Vista Previa</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  
+  <link rel="icon" type="image/png" href="media/logo.ico" sizes="16x16">
+  <link rel="icon" type="image/png" href="media/logo.ico" sizes="32x32">
+  <link rel="icon" type="image/png" href="media/logo.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="media/logo.ico">
+  <style>
+    .preview-container {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      min-height: 150px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">KodeGit</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://aiittoor10.github.io/DejateDeHistorias/" target="_blank">DéjateDeHistorias</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">NewsLetter</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/aiittoor10/DejateDeHistorias" target="_blank">GitHub</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="ayuda.html">Ayuda</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+  <div class="container mt-5">
+    <h2 class="mb-4">Visualizador de Vista Previa</h2>
+    <form>
+      <div class="form-group">
+        <textarea class="form-control" id="inputText" rows="6" placeholder="Pega el código aquí" oninput="updatePreview()"></textarea>
+      </div>
+    </form>
+    <div class="mt-4">
+      <h4>Vista Previa</h4>
+      <div class="preview-container" id="preview"></div>
+    </div>
+  </div>
+  
+  <footer class="bg-light py-4 mt-5">
+    <div class="container text-center">
+        <p class="mb-0">© 2024 KodeGit - DéjateDeHistorias</p>
+    </div>
+</footer>
+
+  <script>
+    function updatePreview() {
+      var inputText = document.getElementById('inputText').value;
+      
+      document.getElementById('preview').innerHTML = inputText;
+    }
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

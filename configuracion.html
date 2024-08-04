@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo Oscuro con Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bs-dark-bg: #121212;
+            --bs-dark-color: #e0e0e0;
+            --bs-dark-border-color: #373737;
+        }
+        .dark-mode {
+            background-color: var(--bs-dark-bg) !important;
+            color: var(--bs-dark-color) !important;
+        }
+        .dark-mode .card, .dark-mode .btn, .dark-mode .navbar {
+            background-color: var(--bs-dark-bg) !important;
+            color: var(--bs-dark-color) !important;
+            border-color: var(--bs-dark-border-color) !important;
+        }
+        .dark-mode .form-control {
+            background-color: var(--bs-dark-bg) !important;
+            color: var(--bs-dark-color) !important;
+            border-color: var(--bs-dark-border-color) !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Mi Sitio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Características</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Precios</a>
+                    </li>
+                </ul>
+            </div>
+            <button id="darkModeToggle" class="btn btn-secondary">Modo Oscuro</button>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Título de la tarjeta</h5>
+                <p class="card-text">Este es un ejemplo de tarjeta con Bootstrap. Haz clic en el botón para alternar el modo oscuro.</p>
+                <a href="#" class="btn btn-primary">Ir a algún lugar</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para aplicar el modo oscuro si está almacenado en localStorage
+        function applyDarkMode() {
+            const bodyElement = document.body;
+            const darkMode = localStorage.getItem('darkMode');
+            if (darkMode === 'enabled') {
+                bodyElement.classList.add('dark-mode');
+                document.getElementById('darkModeToggle').textContent = 'Modo Claro';
+            } else {
+                bodyElement.classList.remove('dark-mode');
+                document.getElementById('darkModeToggle').textContent = 'Modo Oscuro';
+            }
+        }
+
+        // Al cargar la página, aplica el modo oscuro si está activado
+        document.addEventListener('DOMContentLoaded', (event) => {
+            applyDarkMode();
+        });
+
+        // Alternar el modo oscuro y guardar la preferencia en localStorage
+        const toggleButton = document.getElementById('darkModeToggle');
+        toggleButton.addEventListener('click', () => {
+            const bodyElement = document.body;
+            bodyElement.classList.toggle('dark-mode');
+            if (bodyElement.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                toggleButton.textContent = 'Modo Claro';
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                toggleButton.textContent = 'Modo Oscuro';
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

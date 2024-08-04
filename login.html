@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KodeGit - Login</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="media/logo.ico" sizes="16x16">
+    <style>
+        body, html {
+            height: 100%;
+            background-color: #f8f9fa;
+        }
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .login-card {
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+        .login-card .form-control {
+            border-radius: 0.5rem;
+        }
+        .login-card .btn {
+            border-radius: 0.5rem;
+        }
+        .login-card .alert {
+            display: none;
+            margin-top: 1rem;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <h1 class="text-center mb-4">KodeGit</h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" class="form-control" id="username" placeholder="Introduce tu usuario" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" class="form-control" id="password" placeholder="Introduce tu contraseña" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
+                <div class="alert alert-danger mt-3" role="alert" id="errorMessage">
+                    Usuario o contraseña incorrectos
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Validar el usuario y la contraseña
+            if (username === 'dd_hhyt' && password === 'Ay8df8zd8!.') {
+                // Redirigir a index.html
+                window.location.href = 'index.html';
+            } else {
+                // Mostrar mensaje de error
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar HTML desde JSON</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos adicionales */
+    </style>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script>
+        // Función para cargar el archivo JSON
+        async function loadHTMLFragment() {
+            try {
+                const response = await fetch('code/encabezado.json');
+                const data = await response.json();
+                document.getElementById('content').innerHTML = data[0].encabezado;
+            } catch (error) {
+                console.error('Error cargando el archivo JSON:', error);
+            }
+        }
+
+        // Llamar a la función para cargar el fragmento HTML
+        loadHTMLFragment();
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuda al Usuario</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 56px;
+        }
+        .faq-section {
+            margin-top: 20px;
+        }
+        .documentation-section {
+            margin-top: 40px;
+        }
+        .documentation-item {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .documentation-item img {
+            width: 64px; /* Tamaño del ícono */
+            height: 64px; /* Tamaño del ícono */
+        }
+        .documentation-title {
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Ayuda al Usuario</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">Preguntas Frecuentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#documentation">Documentación</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="container">
+        <!-- Sección de Preguntas Frecuentes -->
+        <section id="faq" class="faq-section">
+            <h2 class="text-center">Preguntas Frecuentes</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                ¿Cómo puedo registrarme en el sitio?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Para registrarte, haz clic en el botón de "Registrarse" en la esquina superior derecha y completa el formulario con tus datos.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                ¿Cómo puedo restablecer mi contraseña?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Para restablecer tu contraseña, haz clic en "Olvidé mi contraseña" en la página de inicio de sesión y sigue las instrucciones.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                ¿Cómo contacto al soporte técnico?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Puedes contactar al soporte técnico utilizando el formulario de contacto más abajo o enviando un correo a soporte@ejemplo.com.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Documentación -->
+        <section id="documentation" class="documentation-section">
+            <h2 class="text-center">Documentación</h2>
+            <div class="row">
+                <div class="col-md-4 documentation-item">
+                    <a href="#"><img src="media/archivo.png" alt="Guía de Inicio Rápido"></a>
+                    <h5 class="documentation-title">Guía de Inicio Rápido</h5>
+                </div>
+                <div class="col-md-4 documentation-item">
+                    <a href="#"><img src="media/archivo.png" alt="Manual del Usuario"></a>
+                    <h5 class="documentation-title">Manual del Usuario</h5>
+                </div>
+                <div class="col-md-4 documentation-item">
+                    <a href="#"><img src="media/archivo.png" alt="Preguntas Frecuentes"></a>
+                    <h5 class="documentation-title">Preguntas Frecuentes</h5>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
